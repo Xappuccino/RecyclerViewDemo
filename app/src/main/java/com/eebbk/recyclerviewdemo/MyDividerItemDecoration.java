@@ -3,6 +3,8 @@ package com.eebbk.recyclerviewdemo;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.nfc.Tag;
@@ -15,6 +17,7 @@ import android.view.View;
 
 public class MyDividerItemDecoration extends RecyclerView.ItemDecoration{
     private static String TAG = "ItemDecoration";
+    private static int headerHeight = 60;
     private static final int[] ATTRS  = new int[]{
             android.R.attr.listDivider
     };
@@ -64,8 +67,10 @@ public class MyDividerItemDecoration extends RecyclerView.ItemDecoration{
             final int top = child.getBottom() + params.bottomMargin + Math.round(ViewCompat.getTranslationY(child));
             final int bottom = top + mDivider.getIntrinsicHeight();
             mDivider.setBounds(left,top,right,bottom);
-            mDivider.draw(c);
-//            Log.d("ItemDecoration",""+left+" "+top+" "+right+" "+bottom);
+//            mDivider.draw(c);
+            Paint mPaint = new Paint();
+            mPaint.setColor(Color.parseColor("#ff0000"));
+//            c.drawRect(left,top,right,bottom,mPaint);
         }
     }
     private void drawHorizontal(Canvas c,RecyclerView parent){
@@ -82,3 +87,4 @@ public class MyDividerItemDecoration extends RecyclerView.ItemDecoration{
         }
     }
 }
+

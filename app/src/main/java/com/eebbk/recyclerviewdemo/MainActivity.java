@@ -1,6 +1,9 @@
 package com.eebbk.recyclerviewdemo;
 
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.View;
 import android.widget.Toast;
 
 import static android.widget.Toast.LENGTH_LONG;
@@ -27,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 //        layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         itemDecoration = new MyDividerItemDecoration(this,LinearLayoutManager.VERTICAL);
-//        layoutManager = new GridLayoutManager(this,2);
-//        layoutManager = new StaggeredGridLayoutManager(2, OrientationHelper.VERTICAL);
+//        layoutManager = new GridLayoutManager(this,4);
+//        layoutManager = new StaggeredGridLayoutManager(5, OrientationHelper.VERTICAL);
         myRecyclerAdapter = new MyRecyclerAdapter();
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(myRecyclerAdapter);

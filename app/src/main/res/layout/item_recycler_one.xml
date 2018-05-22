@@ -7,5 +7,5 @@
     android:layout_height="60dp"
     android:gravity="center"
     android:background="#44ff0000"
-    android:id="@+id/item_tv"/>
+    android:id="@+id/item_one_tv"/>
 </LinearLayout>
